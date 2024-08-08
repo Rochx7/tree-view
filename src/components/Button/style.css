@@ -1,0 +1,35 @@
+.button-select{
+  border: none;
+  color: white;
+  max-height: 24px;
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 2px;
+  transition-duration: 0.3s;
+}
+.button-outlined{
+  color: #77818C;
+}
+.button-outlined:hover{
+  color: #fff;
+}
+.button-contained{
+  background-color: #023B78;
+}
+.button-select:hover {
+  background-color: #2188FF;
+}
+.button-outlined-selected{
+  background-color: #2188FF;
+}
+.is-selected{
+  background-color: #2188FF
+}
