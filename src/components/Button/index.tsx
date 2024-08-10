@@ -7,14 +7,14 @@ import ThunderIcon from "../../assets/Thunder";
 interface ButtonProps {
   title: string;
   variant?: "outlined" | "contained";
-  icon?: "gold" | "thunder" | "alert"
+  icon?: "gold" | "energy" | "alert"
   isSelected?: string | null
   onClick?: () => void
   props?:any
 }
 
-const Button = ({title, variant="contained",icon="gold",isSelected, onClick,props}:ButtonProps) => {
-  const selected = sanitize(title) === isSelected
+const Button = ({title, variant="contained", icon="gold", isSelected, onClick, props}: ButtonProps) => {
+  const selected = sanitize(title) === isSelected || icon  === isSelected 
 
   const hashVariant = {
     outlined: "button-outlined",
@@ -23,7 +23,7 @@ const Button = ({title, variant="contained",icon="gold",isSelected, onClick,prop
 
   const hashIcon = { 
     "gold": ()=> <GoldIcon/>,
-    "thunder": ()=> <ThunderIcon isSelected={selected}/>,
+    "energy": ()=> <ThunderIcon isSelected={selected}/>,
     "alert": ()=> <AlertIcon isSelected={selected}/>
   }
 

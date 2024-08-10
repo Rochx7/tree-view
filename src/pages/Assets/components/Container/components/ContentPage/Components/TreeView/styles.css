@@ -4,7 +4,8 @@
   width: 675px;
   height: 100%;
   border: 1px solid var(--gray-border-color); 
-  border-radius: 2px 
+  border-radius: 2px ;
+  overflow: auto;
 }
 .tree-view-input{
   display: flex;
@@ -28,5 +29,6 @@ input::placeholder {
 }
 
 .tree-view{
-  margin: 8px 16px;
+  margin: 8px 0px 16px 16px;
+  height: 100%;
 }

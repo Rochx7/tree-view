@@ -1,5 +1,5 @@
-import Navigation from '../Navigation';
 import ContentPage from './components/ContentPage';
+import Navigation from './components/Navigation';
 import './styles.css'
 
 const Container = () => {

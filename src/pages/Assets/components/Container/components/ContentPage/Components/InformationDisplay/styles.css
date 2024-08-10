@@ -12,5 +12,5 @@
 }
 
 .info-content{
-  border-top: 1px solid var(--gray-border-color); 
+  height: 100%;
 }

@@ -1,4 +1,4 @@
-export const assets = [
+const assets = [
   {
     "name": "CONVEYOR BELT ASSEMBLY",
     "id": "656a07bbf2d4a1001e2144c2",
@@ -71,10 +71,9 @@ export const assets = [
     "sensorType": null,
     "status": null
   }
-
 ]
 
-export const locations = [
+const locations = [
   {
     "name": "CHARCOAL STORAGE SECTOR",
     "id": "656a07b3f2d4a1001e2144bf",
@@ -96,3 +95,4 @@ export const locations = [
     "parentId": null
   }
 ]
+export const jaguarUnit = {assets, locations}

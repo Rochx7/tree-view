@@ -1,12 +1,12 @@
-import InformationDisplay from "../InformationDisplay";
-import TreeView from "../TreeView";
+import InformationDisplay from "./Components/InformationDisplay";
 import "./styles.css"
+import TreeView from "./Components/TreeView";
 
 const ContentPage = () => {
     return (
       <div className="content-page">
-        <TreeView/>
-        <InformationDisplay/>
+          <TreeView/>
+          <InformationDisplay/>
       </div>
     );
  

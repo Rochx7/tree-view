@@ -1,0 +1,27 @@
+.component-node{
+  display: flex;
+  align-items: center;
+  cursor:pointer;
+  gap: 4px;
+  padding: 2px 5px;
+  width: 100%;
+
+}
+
+.is-select{
+  background-color: var(--blue-light-color);
+  color: var(--white-color)
+}
+
+.component-icon {
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+}
+
+.operating {
+  background-color: var(--green-color);
+}
+.alert {
+  background-color: var(--red-color);
+}

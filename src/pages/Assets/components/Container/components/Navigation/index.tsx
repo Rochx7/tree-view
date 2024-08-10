@@ -1,7 +1,7 @@
-import Button from '../../../../components/Button';
 import { useSearchParams } from 'react-router-dom';
-import { sanitize } from '../../../../utils/sanitize';
 import './styles.css'
+import Button from '../../../../../../components/Button';
+import { sanitize } from '../../../../../../utils/sanitize';
 
 interface hashFilterTitle{
   [key: string]: string;
@@ -36,8 +36,8 @@ const Navigation = () => {
         <h4 style={{color: "var(--gray-text-color)", fontWeight:400}}>/ {hashFilterTitle[getUnitParam]}</h4>
       </div>
       <div style={{display:"flex", gap:"8px"}}>
-        <Button title='Sensor de energia' variant='outlined' icon="thunder" isSelected={filter} onClick={()=> handleSelect('Sensor de energia')}/>
-        <Button title='Crítico' variant='outlined' icon="alert" isSelected={filter} onClick={()=> handleSelect('Crítico')}/>
+        <Button title='Sensor de energia' variant='outlined' icon="energy" isSelected={filter} onClick={()=> handleSelect('energy')}/>
+        <Button title='Crítico' variant='outlined' icon="alert" isSelected={filter} onClick={()=> handleSelect('alert')}/>
       </div>
     </nav>
   )
