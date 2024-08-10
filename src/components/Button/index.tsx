@@ -1,8 +1,8 @@
 import "./style.css"
-import Gold from "../../assets/Gold.svg"
-import Thunder from "../../assets/Thunderbolt.svg"
-import Alert from "../../assets/Alert.svg"
 import { sanitize } from "../../utils/sanitize";
+import AlertIcon from "../../assets/Alert";
+import GoldIcon from "../../assets/Gold";
+import ThunderIcon from "../../assets/Thunder";
 
 interface ButtonProps {
   title: string;
@@ -14,6 +14,7 @@ interface ButtonProps {
 }
 
 const Button = ({title, variant="contained",icon="gold",isSelected, onClick,props}:ButtonProps) => {
+  const selected = sanitize(title) === isSelected
 
   const hashVariant = {
     outlined: "button-outlined",
@@ -21,16 +22,14 @@ const Button = ({title, variant="contained",icon="gold",isSelected, onClick,prop
   }
 
   const hashIcon = { 
-    "gold":Gold,
-    "thunder": Thunder,
-    "alert": Alert
+    "gold": ()=> <GoldIcon/>,
+    "thunder": ()=> <ThunderIcon isSelected={selected}/>,
+    "alert": ()=> <AlertIcon isSelected={selected}/>
   }
 
-  const selected = sanitize(title) === isSelected
-  
   return (
     <button className={`button-select ${hashVariant[variant]} ${selected && "is-selected"}`} {...props} onClick={onClick}>
-      <img src={hashIcon[icon]} alt="Logo da Tractian" /> {title}
+      {hashIcon[icon]()} {title}
     </button>
   )
 }

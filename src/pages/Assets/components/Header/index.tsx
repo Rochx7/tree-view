@@ -2,16 +2,17 @@ import React from 'react';
 import './styles.css'
 import LogoTratian from "../../../../assets/logoTractian.svg"
 import Button from '../../../../components/Button';
-import { useNavigate } from 'react-router';
 import { useSearchParams } from 'react-router-dom';
+import { sanitize } from '../../../../utils/sanitize';
 
 const Header: React.FC = () => {
-const navigate = useNavigate();
-const [searchParams] = useSearchParams();
+const [searchParams, setSearchParams] = useSearchParams();
 const unit = searchParams.get("unit")
 
-const handleSelect = (unit: string) => {
-  navigate(`/?unit=${unit.toLowerCase().replace(' ', '-')}`);
+const handleSelect = (unitOption: string) => {
+  const newSearchParams = new URLSearchParams(searchParams.toString());
+  newSearchParams.set('unit', sanitize(unitOption))
+  setSearchParams(newSearchParams);
 };
 
   return (
