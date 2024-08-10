@@ -1,16 +1,16 @@
 .tree-view-content{
-  display: "flex";
+  display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 675px;
   height: 100%;
-  border: 1px solid #D0D7DE; 
+  border: 1px solid var(--gray-border-color); 
   border-radius: 2px 
 }
 .tree-view-input{
   display: flex;
   align-items: center;
   width: 100%;
-  border-bottom: 1px solid #D0D7DE; 
+  border-bottom: 1px solid var(--gray-border-color); 
   border-radius: 2px;
   padding-right: 16px;
   height: 45px
@@ -28,7 +28,5 @@ input::placeholder {
 }
 
 .tree-view{
-  min-height: 100%;
-  margin: 4px 8px ;
- 
+  margin: 8px 16px;
 }

@@ -1,5 +1,7 @@
 .section-container{
   height: 100%;
+  display:flex; 
+  flex-direction: column;
   padding: 16px;
   margin: 16px;
   border-radius: 4px;

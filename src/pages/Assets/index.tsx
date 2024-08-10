@@ -1,13 +1,13 @@
-import React from 'react';
 import Header from './components/Header';
 import Container from './components/Container';
+import "./styles.css"
 
-const Assets: React.FC = () => {
+const Assets = () => {
   return (
-    <main style={{height:"100%"}}>
+    <div className='assets'>
       <Header/>
       <Container/>
-    </main>
+    </div>
   )
 }
 

@@ -1,6 +1,5 @@
 import Navigation from '../Navigation';
 import ContentPage from './components/ContentPage';
-
 import './styles.css'
 
 const Container = () => {

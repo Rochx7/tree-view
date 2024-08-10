@@ -2,12 +2,13 @@ import "./style.css"
 import Gold from "../../assets/Gold.svg"
 import Thunder from "../../assets/Thunderbolt.svg"
 import Alert from "../../assets/Alert.svg"
+import { sanitize } from "../../utils/sanitize";
 
 interface ButtonProps {
   title: string;
   variant?: "outlined" | "contained";
   icon?: "gold" | "thunder" | "alert"
-  isSelected?:string
+  isSelected?: string | null
   onClick?: () => void
   props?:any
 }
@@ -25,7 +26,7 @@ const Button = ({title, variant="contained",icon="gold",isSelected, onClick,prop
     "alert": Alert
   }
 
-  const selected = title === isSelected
+  const selected = sanitize(title) === isSelected
   
   return (
     <button className={`button-select ${hashVariant[variant]} ${selected && "is-selected"}`} {...props} onClick={onClick}>

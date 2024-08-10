@@ -1,33 +1,12 @@
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { assets, locations } from '../../../../../../mocks'
 import TreeNode from '../TreeNode'
 import "./styles.css"
 import Search from "../../../../../../assets/Search.svg"
+import { formatArray } from '../../../../../../utils'
 
 const TreeView = () => {
-
-  const formatArray = (arr)=> {
-    let format = {}
-    const result = []
-    
-    arr.forEach((item) => {
-    format[item.id] = {...item, children:[] }
-    })
-    
-    arr.forEach((item)=>{
-      if(item.parentId){
-        const parent = format[item.parentId] 
-        
-        if(parent){
-          parent.children.push(format[item.id])
-        }
-      return
-      }
-        result.push(format[item.id])
-    })
-  return result
-}
 
 const addAssetsToLocation = (location, assets) => {
   assets.forEach((asset) => {
@@ -82,6 +61,11 @@ const onQueryChange = (e) => {
   e.preventDefault()
   setTreeData(filterBy(formatConcat(), e.target.value))
 }
+
+// useEffect(()=>{
+
+// },[])
+
 
   return (
     <div className='tree-view-content'>
