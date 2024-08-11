@@ -5,7 +5,6 @@ import "./style.css"
 
 
 const Component = ({node}) => {
-
   const [searchParams, setSearchParams] = useSearchParams();
   const component = searchParams.get("component")
   const isSelected = component === node.id

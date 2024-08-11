@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { apexUnit, jaguarUnit, tobiasUnit } from '../mocks';
-import { Asset, Location } from '../types';
+import { Asset, Location, TreeNode, TreeView } from '../types';
 
 const useFormattedData = () => {
+  const [formattedData, setFormattedData] = useState<TreeView | []>([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [searchParams] = useSearchParams();
   const unit = searchParams.get("unit") || "tobias-unit"
 
@@ -12,9 +14,6 @@ const useFormattedData = () => {
     "jaguar-unit": jaguarUnit,
     "tobias-unit": tobiasUnit
   }
-
-  const [formattedData, setFormattedData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
 
   const formatArray = (arr: Array<Location | Asset>): (Location | Asset)[] => {
     const format: { [key: string]: Location | Asset } = {};
@@ -41,7 +40,7 @@ const useFormattedData = () => {
   useEffect(() => {
     setIsLoading(true);
 
-    const addAssetsToLocation = (location: Location | Asset, assets: (Location | Asset)[]) => {
+    const addAssetsToLocation = (location: Location, assets: Asset[]) => {
       if (!location.hasOwnProperty('sensorType')) {
         location.isLocation = true;
       }
@@ -65,7 +64,7 @@ const useFormattedData = () => {
         hashLocation[location.id] = location;
       });
 
-      const rootLocations = formatArray(hashUnit[unit].locations);
+      const rootLocations = formatArray(hashUnit[unit].locations );
 
       assetsFormatado.forEach((asset) => {
         if (!asset.locationId) {
@@ -84,7 +83,21 @@ const useFormattedData = () => {
 
   }, [unit]);
 
-  return { formattedData, isLoading };
+  const findComponent = (data: TreeView, component: string): TreeNode | undefined => {
+    if (!component) return;
+    for (let node of data) {
+      if (node.id === component) {
+        return node;
+      }
+      const found = findComponent(node.children, component);
+      if (found) {
+        return found; 
+      }
+    }
+    return undefined; 
+  };
+
+  return { formattedData, isLoading, findComponent };
 };
 
 export default useFormattedData;

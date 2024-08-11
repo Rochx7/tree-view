@@ -8,7 +8,7 @@ export interface Asset {
   children: Asset[];
 };
 
-export interface  Location {
+export interface Location {
   name: string;
   id: string;
   parentId: string | null;
@@ -16,7 +16,20 @@ export interface  Location {
   children: (Location | Asset)[];
 };
 
-export interface  Unit {
+export interface Unit {
   assets: Asset[];
   locations: Location[];
 };
+
+export interface TreeNode {
+  name: string;
+  id: string;
+  parentId?: string | null;
+  isLocation?: boolean;
+  sensorType?: "energy" | "vibration" | null;
+  status?: "operating" | "alert" | null;
+  locationId?: string | null;
+  children: (Location | Asset)[];
+} 
+
+export interface TreeView extends Array<TreeNode> {}

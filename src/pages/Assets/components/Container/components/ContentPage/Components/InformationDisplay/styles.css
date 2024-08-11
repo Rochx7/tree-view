@@ -7,13 +7,29 @@
   border-radius: 2px; 
 }
 
-.info-display-content > h1{
-  margin: 16px;
-}
-
 .info-content{
   display: flex;
   flex-direction: column;
   padding:24px;
   gap:24px
+}
+
+.info-header{
+  display: flex;
+  align-items: center;
+  gap:8px;
+  padding: 16px;
+}
+
+.component-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+}
+
+.operating {
+  background-color: var(--green-color);
+}
+.alert {
+  background-color: var(--red-color);
 }
