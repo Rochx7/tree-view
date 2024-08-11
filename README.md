@@ -1,60 +1,16 @@
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-# tree-view
-=======
->>>>>>> Stashed changes
-# React + TypeScript + Vite
+# TreeView - Uma visualização hierárquica com filtragem
+### Descrição:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+O TreeView é um projeto React que implementa uma estrutura de dados hierárquica, visualizando elementos em uma árvore. Ele foi desenvolvido como solução para um desafio que exigia a organização de dados em categorias pai-filho, como Locations, Assets e Components.
 
-Currently, two official plugins are available:
+### Tecnologias Utilizadas:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+React: Biblioteca JavaScript para construção de interfaces de usuário.
+Vite: Ferramenta de build rápida para desenvolvimento frontend.
+React Router DOM: Biblioteca para roteamento em aplicações React.
 
-## Expanding the ESLint configuration
+### Funcionalidades:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
-<<<<<<< Updated upstream
-=======
->>>>>>> 1498972 (first commit)
->>>>>>> Stashed changes
+Visualização hierárquica: Organiza os dados em uma estrutura de árvore, com elementos pai e filho.
+Filtragem: Permite filtrar os elementos da árvore através de parâmetros de consulta (query params) na URL.
+Componentes reutilizáveis: Emprega componentes React para criar uma estrutura modular e escalável.
