@@ -1,6 +1,6 @@
 .button-select{
   border: none;
-  color: white;
+  color: var(--white-color);
   height: 24px;
   padding: 4px 8px;
   text-align: center;
@@ -16,21 +16,23 @@
   transition-duration: 0.3s;
 }
 .button-outlined{
-  color: #77818C;
+  color: var(--gray-text-color);
+  border: 1px solid var(--gray-border-color);
+  background-color: var(--white-color);
 }
 .button-outlined:hover{
-  color: #fff;
+  color: var(--white-color);
 }
 .button-contained{
-  background-color: #023B78;
+  background-color: var(--blue-medium-color);
 }
 .button-select:hover {
-  background-color: #2188FF;
+  background-color: var(--blue-light-color);
 }
 .button-outlined-selected{
-  background-color: #2188FF;
+  background-color: var(--blue-light-color);
 }
 .is-selected{
-  background-color: #2188FF;
-  color: #fff;
+  background-color: var(--blue-light-color);
+  color: var(--white-color);
 }
