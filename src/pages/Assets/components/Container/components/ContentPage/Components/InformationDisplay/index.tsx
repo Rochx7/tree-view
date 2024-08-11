@@ -33,15 +33,22 @@ useEffect(()=>{
 
     return (
       <section className="info-display-content">
-        <div className="info-header">
-        <h2>{ currentComponent.name || ""}</h2>
-          {renderCurrentIcon()}
-        </div>
-        <div style={{width:"100%", height:"1px", backgroundColor:"var(--gray-border-color)"}}/>
-          <div className="info-content">
-              <EquipmentType/>
-              <SensorInfo/>
+        {component ?(
+          <>
+          <div className="info-header">
+          <h2>{ currentComponent.name || ""}</h2>
+            {renderCurrentIcon()}
           </div>
+          <div style={{width:"100%", height:"1px", backgroundColor:"var(--gray-border-color)"}}/>
+            <div className="info-content">
+                <EquipmentType/>
+                <SensorInfo/>
+            </div>
+          </>
+        ) : (
+          <h2 style={{padding:"24px"}}>Selecione um componente</h2>
+        )}
+        
       </section>
     );
  
