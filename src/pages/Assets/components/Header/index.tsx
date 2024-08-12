@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import './styles.css'
-import LogoTratian from "../../../../assets/logoTractian.svg"
-import Button from '../../../../components/Button';
+import LogoTratian from "@/assets/logoTractian.svg"
 import { useSearchParams } from 'react-router-dom';
-import { sanitize } from '../../../../utils/sanitize';
+import { sanitize } from '@/utils/sanitize';
+import Button from '@/components/Button';
+
 
 const Header: React.FC = () => {
 const [searchParams, setSearchParams] = useSearchParams();
