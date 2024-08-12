@@ -1,16 +1,26 @@
-# TreeView - Uma visualização hierárquica com filtragem
-### Descrição:
+# 🌲 TreeView - Visualizando a Hierarquia de Ativos
 
-O TreeView é um projeto React que implementa uma estrutura de dados hierárquica, visualizando elementos em uma árvore. Ele foi desenvolvido como solução para um desafio que exigia a organização de dados em categorias pai-filho, como Locations, Assets e Components.
+### 📄 Descrição:
 
-### Tecnologias Utilizadas:
+O TreeView é um aplicativo React desenvolvido para visualizar a hierarquia de ativos de forma intuitiva e organizada. Ele permite que os usuários naveguem por uma estrutura em árvore, explorando as relações entre diferentes tipos de ativos, como locais (Locations), equipamentos (Assets) e componentes.
 
-React: Biblioteca JavaScript para construção de interfaces de usuário.
-Vite: Ferramenta de build rápida para desenvolvimento frontend.
-React Router DOM: Biblioteca para roteamento em aplicações React.
+### 💻 Contexto do Desafio
 
-### Funcionalidades:
+No contexto industrial, o gerenciamento de ativos é fundamental para garantir a eficiência e a produtividade. A visualização em árvore oferece uma maneira clara e concisa de entender as relações entre os diferentes ativos, facilitando tarefas como manutenção, inventário e planejamento.
 
-Visualização hierárquica: Organiza os dados em uma estrutura de árvore, com elementos pai e filho.
-Filtragem: Permite filtrar os elementos da árvore através de parâmetros de consulta (query params) na URL.
-Componentes reutilizáveis: Emprega componentes React para criar uma estrutura modular e escalável.
+### 🛠️ Tecnologias Utilizadas:
+
+- React: Biblioteca JavaScript para construção de interfaces de usuário.
+- Vite: Ferramenta de build rápida para desenvolvimento frontend.
+- React Router DOM: Biblioteca para roteamento em aplicações React.
+
+### ⚙️ Funcionalidades:
+
+Visualização em árvore: Apresenta os dados de ativos em uma estrutura hierárquica, facilitando a compreensão das relações entre eles.
+- Filtragem: Permite filtrar os ativos por diferentes critérios, como tipo de ativo (local, equipamento, componente), utilizando parâmetros de consulta (query params) no URL.
+- Navegação intuitiva: Permite aos usuários navegar pela árvore de ativos de forma fácil e intuitiva.
+
+<img src="https://github.com/user-attachments/assets/e443a62d-5520-4463-950c-3715e564b33a" height="300px" />
+<img src="https://github.com/user-attachments/assets/a2008944-7d88-41f5-a7fb-3a3b0f026209" height="300px" />
+<img src="https://github.com/user-attachments/assets/f5d018f9-aa68-435d-ba37-75c4063b51e1" height="300px" />
+<img src="https://github.com/user-attachments/assets/542e5673-58b1-49d7-8ba8-9ffa347a5785" height="300px" />
