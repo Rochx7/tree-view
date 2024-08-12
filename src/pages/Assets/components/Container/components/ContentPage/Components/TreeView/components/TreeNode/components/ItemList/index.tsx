@@ -1,8 +1,8 @@
-import AssetIcon from "../../../../../../../../../../../../assets/Asset.svg"
-import LocationIcon from "../../../../../../../../../../../../assets/Location.svg"
-import { Asset } from "../../../../../../../../../../../../types"
-import "./style.css"
-type IconKeys = 'asset' | 'location';
+import AssetIcon from "@/assets/Asset.svg";
+import LocationIcon from "@/assets/Location.svg";
+import { Asset } from "@/types";
+import "./style.css";
+type IconKeys = "asset" | "location";
 
 interface ItemListProps {
   node: Asset;
@@ -16,9 +16,9 @@ const ItemList: React.FC<ItemListProps> = ({ node, nodeIcon }) => {
   };
   return (
     <div className="item-node">
-      <img src={hashIcon[nodeIcon]} alt={`Logo ${nodeIcon}`}/>
+      <img src={hashIcon[nodeIcon]} alt={`Logo ${nodeIcon}`} />
       <p>{node.name}</p>
     </div>
-  )
-}
+  );
+};
 export default ItemList;

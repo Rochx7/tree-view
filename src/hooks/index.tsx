@@ -85,7 +85,7 @@ const useFormattedData = () => {
 
   const findComponent = (data: TreeView, component: string): TreeNode | undefined => {
     if (!component) return;
-    for (let node of data) {
+    for (const node of data) {
       if (node.id === component) {
         return node;
       }

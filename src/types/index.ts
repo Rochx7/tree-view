@@ -6,7 +6,7 @@ export interface Asset {
   sensorType: "energy" | "vibration" | null;
   status: "operating" | "alert" | null;
   children: Asset[];
-};
+}
 
 export interface Location {
   name: string;
@@ -14,12 +14,12 @@ export interface Location {
   parentId: string | null;
   isLocation?: boolean;
   children: (Location | Asset)[];
-};
+}
 
 export interface Unit {
   assets: Asset[];
   locations: Location[];
-};
+}
 
 export interface TreeNode {
   name: string;
@@ -30,6 +30,6 @@ export interface TreeNode {
   status?: "operating" | "alert" | null;
   locationId?: string | null;
   children: (Location | Asset)[];
-} 
+}
 
 export interface TreeView extends Array<TreeNode> {}
