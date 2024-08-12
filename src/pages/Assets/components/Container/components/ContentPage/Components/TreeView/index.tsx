@@ -2,7 +2,7 @@ import { lazy, memo, Suspense, useCallback, useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Search from "@/assets/Search.svg";
 import useFormattedData from "@/hooks";
-import { Unit } from "@/types";
+import { TreeNode, TreeView, Unit } from "@/types";
 import "./styles.css";
 import { debounce } from "@/utils";
 
@@ -14,37 +14,30 @@ const TreeView = memo(() => {
   const { formattedData, isLoading } = useFormattedData();
   const [treeData, setTreeData] = useState(formattedData);
 
-  const filterBy = (arr: Unit | never[], query = "") => {
-    const filterRecursive = (nodes: Unit) => {
+  const filterBy = (data: TreeNode, query = "") => {
+    const filterRecursive = (nodes: TreeNode) => {
       return nodes
-        .map((node: { children: Unit }) => ({
+        .map((node: { children: TreeNode }) => ({
           ...node,
           children: node.children ? filterRecursive(node.children) : [],
         }))
-        .filter(
-          (node: {
-            [x: string]: string;
-            name: string;
-            children: string | any[];
-          }) => {
-            const key = filter === "energy" ? "sensorType" : "status";
-            const matchesQuery = query
-              ? node.name.toLowerCase().includes(query.toLowerCase())
-              : true;
-            const matchesFilter = Object.keys(filter).length
-              ? node[key]?.toLowerCase() === filter.toLowerCase()
-              : true;
+        .filter((node: TreeNode) => {
+          const key = filter === "energy" ? "sensorType" : "status";
+          const matchesQuery = query
+            ? node.name.toLowerCase().includes(query.toLowerCase())
+            : true;
+          const matchesFilter = Object.keys(filter).length
+            ? node[key]?.toLowerCase() === filter.toLowerCase()
+            : true;
 
-            const hasVisibleChildren =
-              node.children && node.children.length > 0;
-            return (
-              (matchesQuery || hasVisibleChildren) &&
-              (matchesFilter || hasVisibleChildren)
-            );
-          }
-        );
+          const hasVisibleChildren = node.children && node.children.length > 0;
+          return (
+            (matchesQuery || hasVisibleChildren) &&
+            (matchesFilter || hasVisibleChildren)
+          );
+        });
     };
-    return filterRecursive(arr);
+    return filterRecursive(data);
   };
 
   useEffect(() => {
