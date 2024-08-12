@@ -55,6 +55,7 @@ const useFormattedData = () => {
   };
 
   const formatData = () => {
+    setIsLoading(true);
     const assetsFormatado = formatHierarchy(hashUnit[unit].assets);
     const locationFormatado = formatHierarchy(hashUnit[unit].locations);
     const hashLocation = {};
@@ -76,6 +77,7 @@ const useFormattedData = () => {
     });
 
     setFormattedData(rootLocations);
+    setIsLoading(false);
   };
 
   useEffect(() => {
