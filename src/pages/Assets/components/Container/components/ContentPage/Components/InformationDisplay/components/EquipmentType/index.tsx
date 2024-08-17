@@ -5,17 +5,9 @@ import "./styles.css";
 import { useCallback } from "react";
 import { TreeNode } from "@/types";
 
-interface Component {
-  component: {
-    name: string;
-    status: string;
-    sensorType: string;
-  };
-}
-
-const EquipmentType = ({ component }: Component) => {
-  const isAlert = component.status === "alert";
-  const sensorType = component.sensorType;
+const EquipmentType = ({ component }: { component: TreeNode }) => {
+  const isAlert = component?.status === "alert";
+  const sensorType = component?.sensorType;
 
   const displayCurrentImage = useCallback(() => {
     const hashImg = {
@@ -23,7 +15,7 @@ const EquipmentType = ({ component }: Component) => {
       energy: Motor2,
     };
 
-    if (isAlert) {
+    if (isAlert || !sensorType) {
       return (
         <div className="container-svg">
           <img src={Inbox} className="inbox" />

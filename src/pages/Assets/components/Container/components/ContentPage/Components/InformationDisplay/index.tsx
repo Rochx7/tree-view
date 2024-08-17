@@ -4,15 +4,12 @@ import "./styles.css";
 import useFormattedData from "@/hooks";
 import BoltIcon from "@/assets/Bolt";
 import { useSearchParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { TreeNode } from "@/types";
 
 const InformationDisplay = () => {
-  const [currentComponent, setCurrentComponent] = useState({
-    name: "",
-    status: "",
-    sensorType: "",
-  });
+  const [currentComponent, setCurrentComponent] = useState<TreeNode>(null);
+
   const [searchParams] = useSearchParams();
   const component = searchParams.get("component") || "";
   const { formattedData, findComponent } = useFormattedData();
@@ -29,26 +26,27 @@ const InformationDisplay = () => {
     }
   }, [component, formattedData]);
 
-  const renderCurrentIcon = () => {
-    if (currentComponent.sensorType === "energy") {
-      return <BoltIcon isEnergy={currentComponent.status === "operating"} />;
+  const renderCurrentIcon = useMemo(() => {
+    if (currentComponent?.sensorType === "energy") {
+      return <BoltIcon isEnergy={currentComponent?.status === "operating"} />;
     }
-    if (currentComponent.status) {
+    if (currentComponent?.status) {
       return (
         <div
-          className={`component-icon ${currentComponent.status === "operating" ? "operating" : "alert"}`}
+          className={`component-icon ${currentComponent?.status === "operating" ? "operating" : "alert"}`}
         />
       );
     }
-  };
+    return null;
+  }, [currentComponent]);
 
   return (
     <section className="info-display-content">
       {component ? (
         <>
           <div className="info-header">
-            <h2>{currentComponent.name || ""}</h2>
-            {renderCurrentIcon()}
+            <h2>{currentComponent?.name || ""}</h2>
+            {renderCurrentIcon}
           </div>
           <div
             style={{
