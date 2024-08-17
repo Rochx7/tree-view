@@ -58,7 +58,7 @@ const InformationDisplay = () => {
             }}
           />
           <div className="info-content">
-            <EquipmentType />
+            <EquipmentType component={currentComponent} />
             <SensorInfo />
           </div>
         </>

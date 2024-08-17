@@ -1,22 +1,48 @@
-import MyImage from "@/assets/img1.png";
-const EquipmentType = () => {
-  return (
-    <div style={{ display: "flex", justifyContent: "flex-start", gap: "24px" }}>
-      <div
-        style={{ width: "450px", border: "1px solid var(--gray-border-color)" }}
-      >
-        <img src={MyImage} style={{ width: "450px" }} />
+import Motor1 from "@/assets/img1.png";
+import Motor2 from "@/assets/img2.png";
+import Inbox from "@/assets/Inbox.svg";
+import "./styles.css";
+import { useCallback } from "react";
+import { TreeNode } from "@/types";
+
+interface Component {
+  component: {
+    name: string;
+    status: string;
+    sensorType: string;
+  };
+}
+
+const EquipmentType = ({ component }: Component) => {
+  const isAlert = component.status === "alert";
+  const sensorType = component.sensorType;
+
+  const displayCurrentImage = useCallback(() => {
+    const hashImg = {
+      vibration: Motor1,
+      energy: Motor2,
+    };
+
+    if (isAlert) {
+      return (
+        <div className="container-svg">
+          <img src={Inbox} className="inbox" />
+          <h4 className="inbox-title">Adicionar imagem do Ativo</h4>
+        </div>
+      );
+    }
+
+    return (
+      <div className="container-img">
+        <img src={hashImg[sensorType]} className="motor-img" />
       </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "flex-start",
-          justifyContent: "center",
-          width: "100%",
-          gap: "24px",
-        }}
-      >
+    );
+  }, [component]);
+
+  return (
+    <div className="container-equipment-type">
+      {displayCurrentImage()}
+      <div className="content-info">
         <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
           <h4>Tipo de equipamento</h4>
           <h4 style={{ color: "var(--gray-text-color)", fontWeight: 400 }}>

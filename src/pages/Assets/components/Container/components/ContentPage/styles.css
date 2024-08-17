@@ -6,3 +6,10 @@
   height: 100vh;
   overflow: hidden; 
 }
+
+@media (max-width: 700px) {
+  .content-page {
+    flex-direction: column;
+    overflow: auto
+  }
+}

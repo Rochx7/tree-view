@@ -12,3 +12,11 @@
   display: flex;
   gap: 10px
 }
+
+@media (max-width: 700px) {
+  .main-header {
+    flex-direction: column;
+    height: auto;
+    gap: 16px
+  }
+}

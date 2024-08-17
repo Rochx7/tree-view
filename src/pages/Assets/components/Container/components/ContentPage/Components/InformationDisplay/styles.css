@@ -33,3 +33,9 @@
 .alert {
   background-color: var(--red-color);
 }
+
+@media (max-width: 900px) {
+  .info-header > h2 {
+    font-size: 1.2rem;
+  }
+}
