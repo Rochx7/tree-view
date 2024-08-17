@@ -31,8 +31,11 @@ Visualização em árvore: Apresenta os dados de ativos em uma estrutura hierár
   - Utilização do Jest + React Testing Library para testes unitários, garantindo que os componentes e funções se comportem conforme o esperado após atualizações de estado ou props.
   - Cypress para testes end-to-end, validando o comportamento de um usuário real interagindo com todos os componentes, desde a interface até o banco de dados.
 
+<img src="https://github.com/user-attachments/assets/a2008944-7d88-41f5-a7fb-3a3b0f026209" height="350px" />
+<img src="https://github.com/user-attachments/assets/542e5673-58b1-49d7-8ba8-9ffa347a5785" height="350px" />
 
-<img src="https://github.com/user-attachments/assets/e443a62d-5520-4463-950c-3715e564b33a" height="300px" />
-<img src="https://github.com/user-attachments/assets/a2008944-7d88-41f5-a7fb-3a3b0f026209" height="300px" />
-<img src="https://github.com/user-attachments/assets/f5d018f9-aa68-435d-ba37-75c4063b51e1" height="300px" />
-<img src="https://github.com/user-attachments/assets/542e5673-58b1-49d7-8ba8-9ffa347a5785" height="300px" />
+### Responsividade
+<img src="https://github.com/user-attachments/assets/d6424565-0fb0-44c1-8b3d-023e762feb3c" height="500px" />
+<img src="https://github.com/user-attachments/assets/f922a544-ce01-4e82-a29a-bd9a5f6fa9f3" height="500px" />
+<img src="https://github.com/user-attachments/assets/7b0fbc09-696e-45df-98af-dcf75da1d758" height="500px" />
+
